@@ -78,5 +78,5 @@ def tech_industry():
     return render_template("index.html", newsFetched = newsPart, title = 'Tech Industry')
 
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run()
