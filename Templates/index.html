@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>News</title>
+    <style>
+        /* body {
+            padding: 50px 140px 0px 140px;
+        } */
+        h6 > a {
+            color: black;
+        }
+        h6 {
+            margin-top: 15px;
+        }
+        .content {
+            height: 800px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/google">Google</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/apple">Apple</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/computers">Computers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/culture">Culture</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/internet">Internet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/microsoft">Microsoft</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/mobile">Mobile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/sci-tech">Sci-Tech</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tech-industry">Tech Industry</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- # body -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- cnet -->
+            <div class="col-sm-4 content">
+                <h4>{{title}}</h4>
+                {% for news in newsFetched %}
+                    <h6>
+                        <a href='{{news["link"]}}'>
+                            {{news['title']}}
+                        </a>
+                    </h6>
+                    <hr>
+                {% endfor %}
+            </div>
+            <!-- gk -->
+            <div class="col-sm-4 content">
+                <h4>{{gk_title}}</h4>
+                {% for gk in gk_news %}
+                    <h6>
+                        <a href="{{gk['link']}}">
+                            {{gk['title']}}
+                        </a>
+                    </h6>
+                    <hr>
+                {% endfor %}
+            </div>
+            <!-- jobs -->
+            <div class="col-sm-4 content">
+                <h4>{{jobs_title}}</h4>
+                {% for job in jobs%}
+                <h6><a href="{{job['link']}}">{{job['title']}}</a></h6>
+                {% if job['total_posts'] != None%}
+                <p>{{job['total_posts']}}
+                {% endif %}
+                {% if job['last_date'] != None %}
+                {{job['last_date']}}</p>
+                {% endif %}
+                <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-text">
+          Coded by @copy; Shehzen --- Practice Projects 
+        </span>
+      </nav>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script></body>
+</html>

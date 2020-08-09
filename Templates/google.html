@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/google">Google</a>
+    </nav>
+    <div style="width: 400px;border: 2px solid grey; padding: 10px;margin: 0 auto;">
+        {% for news in newsFetched %}
+        <h3>{{news['title']}}</h3>
+        <p>{{news['body']}}</p>
+        <p><a href='{{news["link"]}}'>Click To go to Site</a></p>
+        {% endfor %}
+    <!-- {{newsFetched}} -->
+    </div>
+</body>
+</html>
