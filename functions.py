@@ -90,7 +90,7 @@ def get_jobs():
             if 'Last Date' in detail.text:
                 last_date = detail.text.strip()
         job_list.append({'title': header.text.strip(), 'link': link, 'last_date': last_date, 'total_posts': total_posts})
-        if len(job_list) == 11:
+        if len(job_list) == 8:
             break
     return job_list
 
